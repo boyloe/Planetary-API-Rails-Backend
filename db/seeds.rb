@@ -16,17 +16,8 @@ def create_planets
             moons: planet["moons"] ? planet["moons"].length : 0, 
             diameter: (planet["meanRadius"]*2), 
             gravity: (planet["gravity"]/9.8).round(2)
-            )
+        )
     end
 end
 
 create_planets
-
-# def filter_planets(planets)
-#     planets.select do |planet|
-#     # byebug
-#     planet['name'].match(/\d/)    
-#     end
-# end
-
-# selection = filter_planets(planets)
