@@ -11,10 +11,15 @@ end
 
 def create_planets
     get_data.each do |planet|
-        Planet.create(name: planet["englishName"], moons: planet["moons"] ? planet["moons"].length : 0, diameter: (planet["meanRadius"]*2), gravity: (planet["gravity"]/9.8).round(2))
+        Planet.create(
+            name: planet["englishName"], 
+            moons: planet["moons"] ? planet["moons"].length : 0, 
+            diameter: (planet["meanRadius"]*2), 
+            gravity: (planet["gravity"]/9.8).round(2))
     end
 end
 
+create_planets
 
 
 
