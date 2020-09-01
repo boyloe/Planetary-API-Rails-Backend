@@ -7,9 +7,6 @@ def get_data
     planets = data['bodies'].select do |body|
         body['isPlanet'] == true && !body['name'].match(/\d/)
     end
-    # planets = planets.sort do |planet|
-    #      planet["perihelion"]
-    # end  
     planets = planets.min_by(planets.length) {|planet| planet["perihelion"]}
     planets
 end
