@@ -4,7 +4,7 @@ def get_data
     response = RestClient.get("https://api.le-systeme-solaire.net/rest/bodies/")
     data = JSON.parse(response)
     planets =  data['bodies'].select do |body|
-        body['isPlanet'] == true
+        body['isPlanet'] == true && !body['name'].match(/\d/)
     end
     planets    
 end
@@ -15,5 +15,6 @@ def create_planets
     end
 end
 
-create_planets
+
+
 
