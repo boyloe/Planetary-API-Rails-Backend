@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'pp'
+
+def get_data
+    response = RestClient.get("https://api.le-systeme-solaire.net/rest/bodies/")
+    data = JSON.parse(response)
+    planets =  data['bodies'].select do |body|
+        body['isPlanet'] == true
+    end
+    planets    
+end
+
+def create_planets
+    get_data.each do |planet|
+        Planet.create(name: planet["englishName"], moons: planet["moons"] ? planet["moons"].length : 0, diameter: (planet["meanRadius"]*2), gravity: (planet["gravity"]/9.8).round(2))
+    end
+end
+create_planets
+
