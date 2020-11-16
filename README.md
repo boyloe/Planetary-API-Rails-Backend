@@ -1,6 +1,6 @@
 # Planetary-API
 
-> API built to host our model of the solar system using Rails.
+> Hackathon solar system visualization
 
 ![Planetary GIF](https://media4.giphy.com/media/drpYCTRAjkM8AVMWJ2/giphy.gif)
 
@@ -22,6 +22,7 @@ We built this project for a half-day hackathon. The project includes a fun visua
 
 - HTML5
 - CSS
+- Flaticon
 - JavaScript
 - Ruby
 - Rails
@@ -29,7 +30,7 @@ We built this project for a half-day hackathon. The project includes a fun visua
 
 ## Setup
 
-- Clone down the Backend (https://github.com/boyloe/Planetary-API-Rails-Backend), run rails db:migrate, run rails:db seed, and start the server by running rails s (must be on port 3000).
+- Clone down the Backend (https://github.com/boyloe/Planetary-API-Rails-Backend), run `rails db:migrate`, run `rails:db seed`, and start the server by running `rails s` (must be on port 3000).
 - Clone down the Frontend (https://github.com/TJBachorz/planetary-api-front-end) and start a server (we recommend lite-server).
 
 ## Code Examples
